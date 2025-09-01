@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>I Own Linkedln</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    
+    <div class="main">
+        <h1>Linkedln</h1>
+        <div class="nav-search">
+            <button class="bar"><i class="fa-solid fa-bars bar"></i> </button>
+            <form method="post" action="http://localhost:8080/linkedln">
+                <input class="search-peoples" placeholder="search peoples" name="name">
+                <button class="s-button" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+        </div>
+        <div class="user-info">
+            <div class="user-photo"><img class="user-img" src="<%= data.userPhoto %>" alt="user-photo"></div>
+            <div class="user-data">
+                <p>
+                    Name : <%= data.name %> <br>
+                    Qualification : <%= data.qualification %>
+                </p>
+            </div>
+        </div>
+        <div class="description">
+            <h3>Skills</h3>
+            <p><%= data.skills %></p>
+            <a href="http://localhost:8080/<%= data.name %>/editSkill">Edit</a>
+            <hr>
+            <h3>About</h3>
+            <p><%= data.about %></p>
+            <a href="http://localhost:8080/<%= data.name %>/editAbout">Edit</a>
+            <hr>
+        </div>
+        <div class="posts">
+            <% for(let post of userPostData) { %>
+            <div class="posts-img">
+                <img class="post-img" src="<%= post.postImage %>" alt="post-img">
+            </div>
+            <div class="post-icon">
+                <i class="fa-regular fa-heart"></i>
+                <i class="fa-regular fa-comment"></i>
+                <i class="fa-regular fa-paper-plane"></i>
+            </div>
+            <div class="post-desc">
+                <%= post.postDesc %>
+            </div><br>
+            <div class="post-delete">
+                <form method="post" action="/delete/<%= data.name %>/<%= post.id %>?_method=DELETE">
+                    <button>Delete Post</button>
+                </form>
+            </div>
+            <br><hr>
+            <% } %>
+        </div>
+    </div>
+    <div class="add-post">
+        <a href="http://localhost:8080/newpost"><button type="button" class="type-button"><i class="fa-solid fa-plus"></i></button></a>
+    </div>
+</body>
+</html>

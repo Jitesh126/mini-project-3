@@ -1,0 +1,89 @@
+.main {
+    width: 375px;
+    margin-left: 37.7%;
+}
+
+.nav-search {
+    display: flex;
+    justify-content: space-around;
+}
+
+.search-peoples {
+    height: 40px;
+    width: 250px;
+    border-radius: 20px;
+}
+.s-button {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+.bar {
+    border-radius: 10px;
+    padding: 0 7px;  
+}
+
+.user-info {
+    margin-top: 10px;
+    display: flex;    
+}
+
+.user-photo {
+    height: 120px;
+    width: 120px;
+    border: 1px solid black;
+    border-radius: 50%;
+    margin-left: 15px;
+    display: flex;
+}
+
+.user-img {
+    border-radius: 50%;
+}
+
+.user-data {
+    margin-left: 50px;
+}
+
+hr {
+    width: 300px;
+}
+
+.post-img {
+    width: 360px;
+}
+
+.post-icon {
+    letter-spacing: 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.type-button {
+    padding: 20px;
+    border-radius: 50%;
+    background-color: blue;
+    border-color: blue;
+    color: white;
+}
+
+.posts {
+    margin-top: 20px;
+}
+
+.add-post {
+    width: 375px;
+    position: fixed;
+    left: 850px;
+    bottom: 20px;
+}
+
+h1 {
+    margin-left: 100px;
+    color: blue;
+    margin-bottom: 10px;
+    font-size: 40px;
+}
+
